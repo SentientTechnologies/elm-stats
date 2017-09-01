@@ -17,7 +17,16 @@ zScore value mean std =
     (value - mean) / std
 
 
-{-| -}
+{-|
+
+    cdf value mean std =
+        let
+            z_ =
+                zScore value mean std
+        in
+        cdfZ z_
+
+-}
 cdf : Float -> Float -> Float -> Maybe Float
 cdf value mean std =
     let
@@ -27,7 +36,13 @@ cdf value mean std =
     cdfZ z_
 
 
-{-| -}
+{-| Returns the normal distribution value given the Z value.
+
+    cdfZ 2.4 -- "Just 0.9918"
+    cdfZ 2.44444444444 -- "Just 0.9927"
+    cdfZ -2.4 -- "Just 0.0082"
+
+-}
 cdfZ : Float -> Maybe Float
 cdfZ z =
     let
