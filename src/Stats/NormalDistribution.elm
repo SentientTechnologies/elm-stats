@@ -36,7 +36,7 @@ cdf value mean std =
     cdfZ z_
 
 
-{-| Returns the normal distribution value given the Z value.
+{-| Returns the probability given the normal distribution Z value.
 
     cdfZ 2.4 -- "Just 0.9918"
     cdfZ 2.44444444444 -- "Just 0.9927"
